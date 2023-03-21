@@ -65,7 +65,7 @@
         
         let ramadan = [
             //trail prupose
-            "Mar 20, 2023 22:30:00","Mar 21, 2023 21:30:00","Mar 22, 2023 20:19:00",
+            "Mar 20, 2023 22:30:00","Mar 21, 2023 17:30:00","Mar 22, 2023 20:19:00",
              //start ramadan date
             "Mar 24, 2023 18:14:00", "Mar 25, 2023 18:15:00","Mar 26, 2023 18:15:00","Mar 27, 2023 18:16:00",
 			"Mar 28, 2023 18:16:00", "Mar 29, 2023 18:17:00","Mar 30, 2023 18:17:00","Mar 31, 2023 18:18:00",
@@ -92,11 +92,13 @@
         //last time action
         let expiredTimer = () => {
             iftar_countdown.style.display = "none";
-            let main = document.querySelector('#after_end_countdown'); 
+            let main = document.querySelector('#after_end_countdown');
+			console.log("currentDate: "+new Date());			
+			let dayCount = new Date().getDate();
+			
+			console.log("day count: "+ dayCount);
             let htmlData = `<div class="iftar_2023">
-			<!--<img src="https://tpc.googlesyndication.com/simgad/12509231562497013461"/>-->
-			<!-- Revive Adserver iFrame Tag - Generated with Revive Adserver v5.1.0 -->
-<img src="https://d2movi6j6mtjdd.cloudfront.net/dev/ramadan/citygroup/bg_220x100.jpg"/>
+		<img src="./images/daily/${dayCount}.jpg"/>
 
     </div>`;
             main.insertAdjacentHTML('afterEnd', htmlData);
@@ -147,6 +149,7 @@
                     // get day
                     let getDay = Math.floor(diffDate / ( 24 * 60 *60 *1000));
                     //console.log(getDay.toLocaleString('bn-BD'));
+                    
                     // get hours
                     let getHours = Math.floor((diffDate % ( 24 * 60 *60 *1000)) / (60 * 60 * 1000));
                     //console.log(convertToBangla(getHours));
