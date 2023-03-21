@@ -93,12 +93,13 @@
         let expiredTimer = () => {
             iftar_countdown.style.display = "none";
             let main = document.querySelector('#after_end_countdown');
-			console.log("currentDate: "+new Date());			
-			let dayCount = new Date().getDate();
+			let todaysDate = new Date();
+			console.log("currentDate: "+todaysDate);			
+			let getDay = todaysDate.getDate();
 			
-			console.log("day count: "+ dayCount);
+			console.log("day count: "+ getDay);
             let htmlData = `<div class="iftar_2023">
-		<img src="./images/daily/${dayCount}.jpg"/>
+		<img src="./images/daily/${getDay}.jpg"/>
 
     </div>`;
             main.insertAdjacentHTML('afterEnd', htmlData);
