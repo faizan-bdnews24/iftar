@@ -2,23 +2,21 @@
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <style>
 #iftar_countdown{
-	width:220px;
-	height:100px;
+	width:970;
+	height:60;
 	font-family:solaimanlipi;
-	font-size: 20px;
 	background-color:#f2f2f2;
 	background-color:green;
-	background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/a93d3453-c2da-435e-b6b9-df089232ebf7/iftar_bg_2023.jpg");
+	background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/fac14648-cec4-4c37-93b0-0aa703cf5f4d/iftar_bg_970_2023.jpg");
 	background-repeat:no-repeat;
 	/*display: flex;*/
 }
 #iftar_countdown_right img{height:48px;}
 #iftar_countdown_left{
     margin: 0px;
-    font-size: 16px;
 	position:absolute;
-	top:68px;
-	left:62px;
+	top:12px;
+	left:480px;
 }
 #iftar_countdown_title{color:#b42126;}
 #iftar_countdown_clock{
@@ -28,11 +26,11 @@
 	color:#35487B;
 }
 #iftar_countdown_clock div[id^="iftar_countdown_"]{
-	padding:0px 20px 0 0;
+	padding:0px 28px 0 0;
 	display: flex;
 	flex-flow: column;
 	text-align:center;
-	font-size: 17px;
+	font-size: 23px;
 }
 #iftar_countdown_clock div[id^="iftar_countdown_"]:first-of-type{padding-left: 5px;}
 
@@ -102,7 +100,7 @@
 			console.log("day count inside expired: "+ getDay);
 			
 			if(getHour>=16){getDay++;}
-			let imgSrc = "./images/daily/mobile/"+getDay+".jpg";
+			let imgSrc = "./images/daily/desktop/"+getDay+".jpg";
             let htmlData = `<div class="iftar_2023">
 			<a target="_blank" href="https://www.facebook.com/TEER1972"><img src="${imgSrc}"/></a>
 
