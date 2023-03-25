@@ -2,23 +2,20 @@
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <style>
 #iftar_countdown{
-	width:220px;
+	width:300px;
 	height:100px;
 	font-family:solaimanlipi;
 	font-size: 20px;
-	background-color:#f2f2f2;
-	background-color:green;
-	background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/a93d3453-c2da-435e-b6b9-df089232ebf7/iftar_bg_2023.jpg");
+	background-image: url("./images/iftar-bg-300x100.jpg");
 	background-repeat:no-repeat;
 	/*display: flex;*/
 }
 #iftar_countdown_right img{height:48px;}
 #iftar_countdown_left{
     margin: 0px;
-    font-size: 16px;
 	position:absolute;
-	top:68px;
-	left:62px;
+	top:65px;
+	left:103px;
 }
 #iftar_countdown_title{color:#b42126;}
 #iftar_countdown_clock{
@@ -66,7 +63,7 @@
             //trail prupose
             "Mar 20, 2023 22:30:00","Mar 21, 2023 17:30:00","Mar 22, 2023 19:10:00","Mar 23, 2023 20:10:00",
              //start ramadan date
-            "Mar 24, 2023 18:14:00", "Mar 25, 2023 18:15:00","Mar 26, 2023 18:15:00","Mar 27, 2023 18:16:00",
+            "Mar 24, 2023 18:14:00", "Mar 25, 2023 22:15:00","Mar 26, 2023 18:15:00","Mar 27, 2023 18:16:00",
 			"Mar 28, 2023 18:16:00", "Mar 29, 2023 18:17:00","Mar 30, 2023 18:17:00","Mar 31, 2023 18:18:00",
 			"Apr 01, 2023 18:18:00", "Apr 02, 2023 18:19:00",    
             "Apr 03, 2023 18:19:00", "Apr 04, 2023 18:19:00", "Apr 05, 2023 18:20:00",    
@@ -101,7 +98,7 @@
 			
 			console.log("day count inside expired: "+ getDay);
 			
-			if(getHour>=16){getDay++;}
+			if(getHour>=18){getDay++;}
 			let imgSrc = "./images/daily/mobile/"+getDay+".jpg";
             let htmlData = `<div class="iftar_2023">
 			<a target="_blank" href="https://www.facebook.com/TEER1972"><img src="${imgSrc}"/></a>
