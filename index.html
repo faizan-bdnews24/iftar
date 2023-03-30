@@ -90,16 +90,23 @@
 		console.log("currentDate: "+todaysDate);			
 		let getDay = todaysDate.getDate();
 		let getHour = todaysDate.getHours();
-		console.log("day count outside: "+ getDay +" hour: "+ getHour);
-		
-        let expiredTimer = () => {
+		//console.log("day count outside: "+ getDay +" hour: "+ getHour);
+		//NEXT DAY
+		let nextDate = new Date();
+		nextDate.setDate(nextDate.getDate()+1);
+		//console.log("nextDate: "+nextDate);
+		let nextDay = nextDate.getDate();
+		console.log("day tomorrow: "+nextDay);
+		//END NEXT DAY
+        
+		let expiredTimer = () => {
             iftar_countdown.style.display = "none";
             let main = document.querySelector('#after_end_countdown');
 			
-			console.log("day count inside expired: "+ getDay);
-			
-			if(getHour>=18){getDay++;}
+			//console.log("day count inside expired: "+ getDay);
 			let imgSrc = "./images/daily/mobile/"+getDay+".jpg";
+			if(getHour>=18){imgSrc = "./images/daily/mobile/"+nextDay+".jpg";console.log(imgSrc);}
+			
             let htmlData = `<div class="iftar_2023">
 			<a target="_blank" href="https://www.facebook.com/TEER1972"><img src="${imgSrc}"/></a>
 
