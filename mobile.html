@@ -96,17 +96,17 @@
 		nextDate.setDate(nextDate.getDate()+1);
 		//console.log("nextDate: "+nextDate);
 		let nextDay = nextDate.getDate();
-		console.log("day tomorrow: "+nextDay);
+		console.log("iftar countdown day tomorrow: "+nextDay);
 		//END NEXT DAY
 		
         let expiredTimer = () => {
             iftar_countdown.style.display = "none";
             let main = document.querySelector('#after_end_countdown');
 			
-			console.log("day today: "+ getDay);
+			//console.log("day today: "+ getDay);
 			
 			let imgSrc = "./images/daily/mobile/"+getDay+".jpg";
-			if(getHour>=18){imgSrc = "./images/daily/mobile/"+nextDay+".jpg";console.log(imgSrc);}
+			if(getHour>=18){imgSrc = "./images/daily/mobile/"+nextDay+".jpg";}
             let htmlData = `<div class="iftar_2023">
 			<a target="_blank" href="https://www.facebook.com/TEER1972"><img src="${imgSrc}"/></a>
 
@@ -123,7 +123,7 @@
             if(diffDate < 0){
              expiredTimer();
             clearInterval(clearTimer);
-            console.log("clear timer");
+            //console.log("clear timer");
             }               
         }
 
