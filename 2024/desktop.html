@@ -1,0 +1,207 @@
+<meta charset="UTF-8">
+<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+<style>
+   #iftar_countdown{
+   width:970;
+   height:60;
+   font-family:solaimanlipi;
+   background-color:#f2f2f2;
+   background-image: url("./images/iftar-bg-970-2023.jpg");
+   /*background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/fac14648-cec4-4c37-93b0-0aa703cf5f4d/iftar_bg_970_2023.jpg");*/
+   background-repeat:no-repeat;
+   /*display: flex;*/
+   }
+   #iftar_countdown_right img{height:48px;}
+   #iftar_countdown_left{
+   margin: 0px;
+   position:absolute;
+   top:12px;
+   left:480px;
+   }
+   #iftar_countdown_title{color:#b42126;}
+   #iftar_countdown_clock{
+   padding-top: 7px;
+   display: flex;
+   flex-flow: row;
+   color:#35487B;
+   }
+   #iftar_countdown_clock div[id^="iftar_countdown_"]{
+   padding:0px 28px 0 0;
+   display: flex;
+   flex-flow: column;
+   text-align:center;
+   font-size: 23px;
+   }
+   #iftar_countdown_clock div[id^="iftar_countdown_"]:first-of-type{padding-left: 5px;}
+</style>
+<div id="iftar_countdown">
+   <div id="iftar_countdown_left">
+      <!--<div id="iftar_countdown_title">ইফতার-এর বাকি</div>-->
+      <div id="iftar_countdown_clock">
+         <div id="iftar_countdown_hour">
+            <span></span>
+         </div>
+         <div id="iftar_countdown_minute">
+            <span></span>
+         </div>
+         <div id="iftar_countdown_second">
+            <span></span>
+         </div>
+      </div>
+   </div>
+   <!--<div id="iftar_countdown_right"><img src="https://d2movi6j6mtjdd.cloudfront.net/dev/ramadan/citygroup/teer.png" alt="bdnews24_iftar"/></div>-->
+</div>
+<div id="after_end_countdown">
+</div>
+<script>      
+   let ramadan = [
+       //trail prupose
+       "Feb 06, 2024 22:30:00","Mar 21, 2024 17:30:00","Mar 22, 2024 19:10:00","Mar 23, 2024 20:10:00",
+        //start ramadan date
+       "Mar 24, 2024 18:14:00", "Mar 25, 2024 18:15:00","Mar 26, 2024 18:15:00","Mar 27, 2024 18:16:00",
+   "Mar 28, 2024 18:16:00", "Mar 29, 2024 18:17:00","Mar 30, 2024 18:17:00","Mar 31, 2024 18:18:00",
+   "Apr 01, 2024 18:18:00", "Apr 02, 2024 18:19:00",    
+       "Apr 03, 2024 18:19:00", "Apr 04, 2024 18:19:00", "Apr 05, 2024 18:20:00",    
+       "Apr 06, 2024 18:20:00", "Apr 07, 2024 18:21:00", "Apr 08, 2024 18:21:00",    
+       "Apr 09, 2024 18:21:00", "Apr 10, 2024 18:22:00", "Apr 11, 2024 18:22:00",    
+       "Apr 12, 2024 18:23:00", "Apr 13, 2024 18:23:00", "Apr 14, 2024 18:23:00",    
+       "Apr 15, 2024 18:24:00", "Apr 16, 2024 18:24:00", "Apr 17, 2024 18:24:00",    
+       "Apr 18, 2024 18:25:00", "Apr 19, 2024 18:25:00", "Apr 20, 2024 18:26:00",    
+       "Apr 21, 2024 18:26:00", "Apr 22, 2024 18:27:00", "Apr 23, 2024 18:27:00",
+   ];
+   
+   let iftar_countdown = document.getElementById('iftar_countdown');
+   //get hours minutes and seconds reference
+   let iftar_hours = document.querySelector('#iftar_countdown_hour span');
+   let iftar_minutes = document.querySelector('#iftar_countdown_minute span');
+   let iftar_seconds = document.querySelector('#iftar_countdown_second span');
+   //get hours minutes and seconds reference end
+   
+   //convert to bangla
+   let convertToBangla = toBd => toBd.toLocaleString('bn-BD');
+   
+   //last time action
+   let todaysDate = new Date();
+   //console.log("currentDate: "+todaysDate);			
+   let getDay = todaysDate.getDate();
+   let getHour = todaysDate.getHours();
+   //console.log("day count outside: "+ getDay +" hour: "+ getHour);
+	//NEXT DAY
+	let nextDate = new Date();
+	nextDate.setDate(nextDate.getDate()+1);
+	//console.log("nextDate: "+nextDate);
+	let nextDay = nextDate.getDate();
+	//console.log("day tomorrow: "+nextDay);
+	//END NEXT DAY
+		
+   let expiredTimer = () => {
+       iftar_countdown.style.display = "none";
+       let main = document.querySelector('#after_end_countdown');
+   
+   //console.log("day today: "+ getDay);
+   
+	let imgSrc = "./images/daily/desktop/"+getDay+".jpg";
+	if(getHour>=18){imgSrc = "./images/daily/desktop/"+nextDay+".jpg";}
+       let htmlData = `<div class="iftar_2024">
+   <a target="_blank" href="https://www.facebook.com/TEER1972"><img src="${imgSrc}"/></a>
+   
+   </div>`;
+       main.insertAdjacentHTML('afterEnd', htmlData);
+   };
+   
+   
+   
+   
+   
+   //clear interval and last time action
+   let lastAction = (diffDate) => {
+       if(diffDate < 0){
+        expiredTimer();
+       clearInterval(clearTimer);
+       //console.log("clear timer");
+       }               
+   }
+   
+    //clear interval else statement
+    let lastActionElseStatement = () => {
+        expiredTimer();
+       clearInterval(clearTimer);        
+   }
+   
+   
+   //ramadan 2024 looping through current date
+   for(let i = 0; i < ramadan.length; i++){
+       let currentDate = new Date();          
+       let ramadanDate = ramadan[i];    
+       let currentDateFormat = currentDate.toString().slice(4, 10);
+       let ramadanDateFormat = ramadanDate.toString().slice(0, 6);
+   
+       //if current date is match to looping date
+       if(currentDateFormat === ramadanDateFormat){
+   
+       //setinterval function start 
+       const timer = () => {
+                          
+       //setinterval with current date is greater than 4 pm 
+       let currentDate =new Date();
+           if(currentDate.getHours() >= "16"){ 
+           
+               let targetDate = new Date(ramadan[i]);  
+               let currentDate =new Date();
+               let diffDate = targetDate - currentDate;
+   
+   
+               // get day
+               let getDay = Math.floor(diffDate / ( 24 * 60 *60 *1000));
+               //console.log(getDay.toLocaleString('bn-BD'));
+               
+               // get hours
+               let getHours = Math.floor((diffDate % ( 24 * 60 *60 *1000)) / (60 * 60 * 1000));
+               //console.log(convertToBangla(getHours));
+               // get minutes
+               let getMinutes = Math.floor((diffDate % ( 60 *60 *1000)) / (60 * 1000));
+               //console.log(convertToBangla(getMinutes));
+               // get seconds
+               let getSeconds = Math.floor((diffDate % ( 60 *1000)) / 1000);
+               //console.log(convertToBangla(getSeconds));
+   
+               //avoid negetive value
+               getHours = getHours < 0 ? 0:getHours;
+               getMinutes = getMinutes < 0 ? 0:getMinutes;
+               getSeconds = getSeconds < 0 ? 0:getSeconds;
+               // getDay = getDay < 0 ? 0:getDay;
+               //avoid negetive value end
+   
+               //leading zero
+               let zero = 0;
+               let convertToZeroBangla = convertToBangla(zero);
+               let convertGetHoursToBangla = getHours < 10 ? convertToZeroBangla + convertToBangla(getHours): convertToBangla(getHours);
+               let convertGetMinutesToBangla = getMinutes < 10 ? convertToZeroBangla + convertToBangla(getMinutes): convertToBangla(getMinutes);
+               let convertGetSecondsToBangla = getSeconds < 10 ? convertToZeroBangla + convertToBangla(getSeconds): convertToBangla(getSeconds);      
+               //end leading zero
+       
+   
+               //output 
+               iftar_hours.innerText = `${convertGetHoursToBangla}`;
+               iftar_minutes.innerText = `${convertGetMinutesToBangla}`;
+               iftar_seconds.innerText = `${convertGetSecondsToBangla}`;
+               //output end
+               
+               //last minutes actions
+               lastAction(diffDate);
+       
+   }
+   else            
+   {
+   lastActionElseStatement();
+   }
+   
+       }
+   
+   var clearTimer = setInterval(timer, 1000);   
+   
+     }
+   }
+   
+   
+</script>
