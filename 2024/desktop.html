@@ -2,35 +2,34 @@
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <style>
    #iftar_countdown{
-   width:970;
-   height:60;
-   font-family:solaimanlipi;
-   background-color:#f2f2f2;
-   background-image: url("./images/iftar-bg-970-2023.jpg");
-   /*background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/fac14648-cec4-4c37-93b0-0aa703cf5f4d/iftar_bg_970_2023.jpg");*/
-   background-repeat:no-repeat;
-   /*display: flex;*/
+	   width:970;
+	   height:90;
+	   font-family:solaimanlipi;
+	   background-color:#f2f2f2;
+	   background-image: url("./images/iftar_bg_970x90.png");
+	   /*background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/fac14648-cec4-4c37-93b0-0aa703cf5f4d/iftar_bg_970_2023.jpg");*/
+	   background-repeat:no-repeat;
+	   /*display: flex;*/
    }
    #iftar_countdown_right img{height:48px;}
    #iftar_countdown_left{
-   margin: 0px;
-   position:absolute;
-   top:12px;
-   left:480px;
+	   margin: 0px;
+	   position:absolute;
+	   top:26px;
+	   left:302px;
    }
    #iftar_countdown_title{color:#b42126;}
    #iftar_countdown_clock{
-   padding-top: 7px;
-   display: flex;
-   flex-flow: row;
-   color:#35487B;
+	   display: flex;
+	   flex-flow: row;
+	   color:white;
    }
    #iftar_countdown_clock div[id^="iftar_countdown_"]{
-   padding:0px 28px 0 0;
-   display: flex;
-   flex-flow: column;
-   text-align:center;
-   font-size: 23px;
+	   padding:0px 122px 0 0;
+	   display: flex;
+	   flex-flow: column;
+	   text-align:center;
+	   font-size: 34px;
    }
    #iftar_countdown_clock div[id^="iftar_countdown_"]:first-of-type{padding-left: 5px;}
 </style>
@@ -56,7 +55,7 @@
 <script>      
    let ramadan = [
        //trail prupose
-       "Mar 08, 2024 22:30:00","Mar 09, 2024  10:10 PM","Mar 10, 2024  5:10 PM","Mar 11, 2024  6:10 PM",
+       "Mar 08, 2024 22:30:00","Mar 09, 2024  10:10 PM","Mar 10, 2024  8:10 PM","Mar 11, 2024  6:10 PM",
         //start ramadan date
 		"Mar 12, 2024  6:10 PM","Mar 13, 2024  6:10 PM","Mar 14, 2024  6:11 PM","Mar 15, 2024  6:11 PM",
 		"Mar 16, 2024  6:12 PM","Mar 17, 2024  6:12 PM","Mar 18, 2024  6:12 PM","Mar 19, 2024  6:13 PM",
@@ -99,10 +98,10 @@
    
    //console.log("day today: "+ getDay);
    
-	let imgSrc = "./images/daily/desktop/"+getDay+".jpg";
-	if(getHour>=18){imgSrc = "./images/daily/desktop/"+nextDay+".jpg";}
+	let imgSrc = "./images/daily/desktop/"+getDay+".gif";
+	if(getHour>=18){imgSrc = "./images/daily/desktop/"+nextDay+".gif";}
        let htmlData = `<div class="iftar_2024">
-   <a target="_blank" href="https://www.facebook.com/TEER1972"><img src="${imgSrc}"/></a>
+   <a target="_blank" href="https://www.facebook.com/RFLFalconbd"><img src="${imgSrc}"/></a>
    
    </div>`;
        main.insertAdjacentHTML('afterEnd', htmlData);
@@ -143,7 +142,7 @@
                           
        //setinterval with current date is greater than 4 pm 
        let currentDate =new Date();
-           if(currentDate.getHours() >= "16"){ 
+           if(currentDate.getHours() >= "14"){ 
            
                let targetDate = new Date(ramadan[i]);  
                let currentDate =new Date();

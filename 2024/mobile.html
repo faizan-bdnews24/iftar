@@ -6,32 +6,30 @@
 	height:100px;
 	font-family:solaimanlipi;
 	font-size: 20px;
-	background-image: url("./images/iftar-bg-300x100.jpg");
+	background-image: url("./images/iftar_bg_300x100.png");
 	/*background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/3ba6ed2b-0a33-4c4b-8d16-77ee22bad5e6/iftar_bg_300x100.jpg");*/
 	background-repeat:no-repeat;
 }
 #iftar_countdown_right img{height:48px;}
 #iftar_countdown_left{
-    margin: 0px;
-	position:absolute;
-	top:63px;
-	left:103px;
+	margin: 0px;
+	position: absolute;
+	top: 52px;
+	left: 36px;
 }
 #iftar_countdown_title{color:#b42126;}
 #iftar_countdown_clock{
-	padding-top: 7px;
 	display: flex;
 	flex-flow: row;
-	color:#35487B;
+	color:white;
 }
 #iftar_countdown_clock div[id^="iftar_countdown_"]{
-	padding:0px 20px 0 0;
-	display: flex;
-	flex-flow: column;
-	text-align:center;
-	font-size: 17px;
+	padding: 0px 29px 0 0;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    font-size: 27px;
 }
-#iftar_countdown_clock div[id^="iftar_countdown_"]:first-of-type{padding-left: 5px;}
 
 </style>
 
@@ -104,10 +102,10 @@
 			
 			//console.log("day today: "+ getDay);
 			
-			let imgSrc = "./images/daily/mobile/"+getDay+".jpg";
-			if(getHour>=18){imgSrc = "./images/daily/mobile/"+nextDay+".jpg";}
+			let imgSrc = "./images/daily/mobile/"+getDay+".gif";
+			if(getHour>=18){imgSrc = "./images/daily/mobile/"+nextDay+".gif";console.log("imgSrc next "+imgSrc );}console.log("imgSrc "+imgSrc);
             let htmlData = `<div class="iftar_2024">
-			<a target="_blank" href="https://www.facebook.com/TEER1972"><img src="${imgSrc}"/></a>
+			<a target="_blank" href="https://www.facebook.com/RFLFalconbd"><img src="${imgSrc}"/></a>
 
     </div>`;
             main.insertAdjacentHTML('afterEnd', htmlData);
@@ -148,7 +146,7 @@
                                
             //setinterval with current date is greater than 4 pm 
             let currentDate =new Date();
-                if(currentDate.getHours() >= "16"){ 
+                if(currentDate.getHours() >= "14"){ 
                 
                     let targetDate = new Date(ramadan[i]);  
                     let currentDate =new Date();
