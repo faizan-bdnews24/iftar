@@ -2,26 +2,24 @@
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <style>
 #iftar_countdown{
-	width:300px;
-	height:100px;
 	font-family:solaimanlipi;
 	font-size: 20px;
-	background-image: url("./images/iftar_bg_300x100.png");
-	/*background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/3ba6ed2b-0a33-4c4b-8d16-77ee22bad5e6/iftar_bg_300x100.jpg");*/
-	background-repeat:no-repeat;
 }
-#iftar_countdown_right img{height:48px;}
-#iftar_countdown_left{
+#iftar_countdown_timer{
 	margin: 0px;
-	position: absolute;
-	top: 52px;
-	left: 36px;
+	width:300px;
+	height:100px;
+	background-image: url("./images/iftar_bg_300x100.png");
+	background-repeat:no-repeat;
 }
 #iftar_countdown_title{color:#b42126;}
 #iftar_countdown_clock{
 	display: flex;
 	flex-flow: row;
 	color:white;
+	position: absolute;
+	top: 52px;
+	left: 36px;
 }
 #iftar_countdown_clock div[id^="iftar_countdown_"]{
 	padding: 0px 30px 0 0;
@@ -30,21 +28,46 @@
     text-align: center;
     font-size: 27px;
 }
-
+#sehri_iftar_time{
+	display:none;
+	margin: 0px;
+	width:300px;
+	height:100px;
+	background-image: url("./images/fixed_bg.png");
+	background-repeat:no-repeat;
+    flex-direction: row;
+    justify-content: center;
+	color:white;
+	font-family:solaimanlipi;
+	font-size:24px
+}
+#sehri_iftar_time span{padding:0 5px;}
+#sehri_time{
+	display: inherit;
+	position: absolute;
+	top: 72px;
+	left:130px;
+}
+#iftar_time{
+	display: inherit;
+	position: absolute;
+	top: 72px;
+	left: 230px;
+}
 </style>
 
 <div id="iftar_countdown">
-	<div id="iftar_countdown_left">
+	<div id="iftar_countdown_timer">
 		<!--<div id="iftar_countdown_title">ইফতার-এর বাকি</div>-->
 		<div id="iftar_countdown_clock">
 			<div id="iftar_countdown_hour">
-			<span></span>
+				<span></span>
 			</div>
 			<div id="iftar_countdown_minute">
-			<span></span>
+				<span></span>
 			</div>
 			<div id="iftar_countdown_second">
-			<span></span>
+				<span></span>
 			</div>
 		</div>
 	</div>
@@ -52,7 +75,25 @@
 	
 </div>
 
-<div id="after_end_countdown">
+<div id="sehri_iftar_time">
+<div id="sehri_time">
+	<div id="sehri_time_hour">
+		<span>৪</span>
+	</div>
+	<div id="sehri_time_hour">:</div>
+	<div id="sehri_time_minute">
+		<span>৪৯</span>
+	</div>
+</div>
+<div id="iftar_time">
+	<div id="iftar_time_hour">
+		<span>৬</span>
+	</div>
+	<div id="iftar_time_hour">:</div>
+	<div id="iftar_time_minute">
+		<span>১১</span>
+	</div>
+</div>
 
 </div>
 <script>      
@@ -72,7 +113,7 @@
        "Apr 09, 2024 18:21:00", "Apr 10, 2024 18:22:00", "Apr 11, 2024 18:22:00", 
    ];
 		
-		let iftar_countdown = document.getElementById('iftar_countdown');
+		let iftar_countdown = document.getElementById('iftar_countdown_timer');
         //get hours minutes and seconds reference
         let iftar_hours = document.querySelector('#iftar_countdown_hour span');
         let iftar_minutes = document.querySelector('#iftar_countdown_minute span');
@@ -98,17 +139,17 @@
 		
         let expiredTimer = () => {
             iftar_countdown.style.display = "none";
-            let main = document.querySelector('#after_end_countdown');
+			let iftar_end_countdown = document.getElementById('sehri_iftar_time');
+			iftar_end_countdown.style.display = "flex";
+            let main = document.querySelector('#sehri_iftar_time');
 			
 			//console.log("day today: "+ getDay);
 			
 			let imgSrc = "./images/daily/mobile/"+getDay+".gif";
 			if(getHour>=18){imgSrc = "./images/daily/mobile/"+nextDay+".gif";console.log("imgSrc next "+imgSrc );}console.log("imgSrc "+imgSrc);
-            let htmlData = `<div class="iftar_2024">
-			<a target="_blank" href="https://www.facebook.com/RFLFalconbd"><img src="${imgSrc}"/></a>
-
-    </div>`;
-            main.insertAdjacentHTML('afterEnd', htmlData);
+            let htmlData = `<a target="_blank" href="https://www.facebook.com/RFLFalconbd"><img src="${imgSrc}"/></a>`;
+            //main.insertAdjacentHTML('afterbegin', htmlData);
+			/*insertAdjacentHTML() method inserts HTML code into a specified position*/
         };
 
 
@@ -146,7 +187,7 @@
                                
             //setinterval with current date is greater than 4 pm 
             let currentDate =new Date();
-                if(currentDate.getHours() >= "16"){ 
+                if(currentDate.getHours() >= "18"){ 
                 
                     let targetDate = new Date(ramadan[i]);  
                     let currentDate =new Date();
