@@ -1,5 +1,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap" rel="stylesheet">
 <style>
 #iftar_countdown{
 	font-family:solaimanlipi;
@@ -96,8 +99,12 @@
 </div>
 
 </div>
-<script>      
-        
+<script>   
+let sehri_time = ["21#৪:৪২","22#৪:৪১ ", "23#৪:৪০ ", "24#৪:৩৯ ", "25#৪:৩৮ ",  "26#৪:৩৬ ",  "27#৪:৩৫ ",  "28#৪:৩৪ ",
+						"29#৪:৩৩ ",  "30#৪:৩১ ",  "31#৪:৩০ ",  "01#৪:২৯ ",  "02#৪:২৮ ",  "03#৪:২৭ ",  "04#৪:২৬ ",  "05#৪:২৪ ",
+						"06#৪:২৪ ",  "07#৪:২৩ ",  "08#৪:২২ ","09#৪:২১ ", "10#৪:২০ " ];   
+        console.log("sehri_iftar_time: "+sehri_time[0].split('#')[1]);
+		
    let ramadan = [
        //trail prupose
        "Mar 08, 2024 22:30:00","Mar 09, 2024  10:10 PM","Mar 10, 2024  9:10 PM","Mar 11, 2024  6:10 PM",
@@ -136,6 +143,12 @@
 		let nextDay = nextDate.getDate();
 		console.log("iftar countdown day tomorrow: "+nextDay);
 		//END NEXT DAY
+		
+		//daily sehri time display
+		let sehriToday = nextDay;
+		console.log("sehriToday: "+sehriToday);
+		//foreach, if date matches then break
+		
 		
         let expiredTimer = () => {
             iftar_countdown.style.display = "none";
