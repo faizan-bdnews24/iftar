@@ -2,12 +2,12 @@
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <style>
    #iftar_countdown{
-	   width:970;
+	   width:980;
 	   height:90;
 	   font-family:solaimanlipi;
 	   background-color:#f2f2f2;
-	   background-image: url("./images/iftar_bg_970x90.png");
-	   /*background-image: url("https://gumlet.assettype.com/bdnews24/2023-03/fac14648-cec4-4c37-93b0-0aa703cf5f4d/iftar_bg_970_2023.jpg");*/
+	   background-image: url("./images/iftar_bg_980x90.png");
+	   background-size: 980px 90px;
 	   background-repeat:no-repeat;
 	   /*display: flex;*/
    }
@@ -15,23 +15,24 @@
    #iftar_countdown_left{
 	   margin: 0px;
 	   position:absolute;
-	   top:26px;
-	   left:302px;
+	   top:35px;
+	   left:408px;
    }
    #iftar_countdown_title{color:#b42126;}
    #iftar_countdown_clock{
 	   display: flex;
 	   flex-flow: row;
-	   color:white;
+	   color:black;
    }
    #iftar_countdown_clock div[id^="iftar_countdown_"]{
-	   padding:0px 122px 0 0;
 	   display: flex;
 	   flex-flow: column;
 	   text-align:center;
-	   font-size: 34px;
+	   font-size: 32px;
    }
-   #iftar_countdown_clock div[id^="iftar_countdown_"]:first-of-type{padding-left: 5px;}
+   #iftar_countdown_clock div[id^="iftar_countdown_"]:nth-child(1){padding-left: 5px;}
+   #iftar_countdown_clock div[id^="iftar_countdown_"]:nth-child(2){padding-left: 83px;}
+   #iftar_countdown_clock div[id^="iftar_countdown_"]:nth-child(3){padding-left: 80px;}
 </style>
 <div id="iftar_countdown">
    <div id="iftar_countdown_left">
@@ -55,7 +56,7 @@
 <script>      
    let ramadan = [
        //trail prupose
-       "Feb 02, 2025 6:10 PM","Mar 09, 2024  10:10 PM","Mar 10, 2024  8:10 PM","Mar 11, 2024  6:10 PM",
+       "Feb 02, 2025 11:10 PM","Mar 09, 2024  10:10 PM","Mar 10, 2024  8:10 PM","Mar 11, 2024  6:10 PM",
         //start ramadan date
 		"Mar 12, 2024  6:10 PM","Mar 13, 2024  6:10 PM","Mar 14, 2024  6:11 PM","Mar 15, 2024  6:11 PM",
 		"Mar 16, 2024  6:12 PM","Mar 17, 2024  6:12 PM","Mar 18, 2024  6:12 PM","Mar 19, 2024  6:13 PM",
