@@ -55,7 +55,7 @@
 <script>      
    let ramadan = [
        //trail prupose
-       "Mar 08, 2024 22:30:00","Mar 09, 2024  10:10 PM","Mar 10, 2024  8:10 PM","Mar 11, 2024  6:10 PM",
+       "Feb 02, 2025 6:10 PM","Mar 09, 2024  10:10 PM","Mar 10, 2024  8:10 PM","Mar 11, 2024  6:10 PM",
         //start ramadan date
 		"Mar 12, 2024  6:10 PM","Mar 13, 2024  6:10 PM","Mar 14, 2024  6:11 PM","Mar 15, 2024  6:11 PM",
 		"Mar 16, 2024  6:12 PM","Mar 17, 2024  6:12 PM","Mar 18, 2024  6:12 PM","Mar 19, 2024  6:13 PM",
@@ -142,7 +142,7 @@
                           
        //setinterval with current date is greater than 4 pm 
        let currentDate =new Date();
-           if(currentDate.getHours() >= "16"){ 
+           if(currentDate.getHours() >= "16"){ /*change this from 16 to desired time to test countdown*/
            
                let targetDate = new Date(ramadan[i]);  
                let currentDate =new Date();
