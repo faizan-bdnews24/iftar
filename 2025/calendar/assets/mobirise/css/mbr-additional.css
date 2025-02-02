@@ -1014,7 +1014,7 @@ a {
     min-height: 72px;
   }
   .cid-tJS6tZXiPa .navbar .navbar-logo img {
-    height: 2rem !important;
+    height: 1.5rem !important;
   }
 }
 @media (max-width: 991px) {
@@ -2307,7 +2307,7 @@ a {
     min-height: 72px;
   }
   .cid-tJS6tZXiPa .navbar .navbar-logo img {
-    height: 2rem !important;
+    height: 1.5rem !important;
   }
 }
 @media (max-width: 991px) {
@@ -2630,13 +2630,13 @@ a {
   background-color: #edefeb;
 }
 .cid-tJS9NNcTLZ .social-row .soc-item a .mbr-iconfont {
-  width: 72px;
-  height: 72px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  font-size: 32px;
+  font-size: 20px;
   background-color: #ffffff;
   color: #202d52;
   transition: all 0.3s ease-in-out;
