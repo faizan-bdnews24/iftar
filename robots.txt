@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /
+User-agent: *
+Allow: /2025/calendar
