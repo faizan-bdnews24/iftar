@@ -1,6 +1,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 <style>
+@font-face {
+   font-family: solaimanlipi;
+   src: url(./fonts/SolaimanLipi_20-04-07.ttf);
+}
 #iftar_countdown{
 	width:320px;
 	height:100px;
@@ -14,8 +18,9 @@
 #iftar_countdown_left{
 	margin: 0px;
 	position: absolute;
-	top: 57px;
-	left: 25px;
+	top: 55px;
+	left: 24px;
+    font-size: 27px;
 }
 #iftar_countdown_title{color:#b42126;}
 #iftar_countdown_clock{
@@ -24,12 +29,12 @@
 	color:black;
 }
 #iftar_countdown_clock div[id^="iftar_countdown_"]{
-	padding: 0px 45px 0 0;
     display: flex;
     flex-flow: column;
     text-align: center;
-    font-size: 26px;
 }
+#iftar_countdown_clock div[id^="iftar_countdown_"]:nth-child(2){padding-left: 46px;}
+#iftar_countdown_clock div[id^="iftar_countdown_"]:nth-child(3){padding-left: 46px;}
 
 </style>
 
@@ -59,7 +64,7 @@
         
    let ramadan = [
        //trail prupose
-       "Feb 04, 2025 11:10 PM","Feb 05, 2025 11:10 PM","Mar 09, 2024  10:10 PM","Mar 10, 2024  9:10 PM","Mar 11, 2024  6:10 PM",
+       "Feb 05, 2025 11:10 PM","Feb 06, 2025 11:10 PM","Mar 09, 2024  10:10 PM","Mar 10, 2024  9:10 PM","Mar 11, 2024  6:10 PM",
         //start ramadan date
 		"Mar 12, 2024  6:10 PM","Mar 13, 2024  6:10 PM","Mar 14, 2024  6:11 PM","Mar 15, 2024  6:11 PM",
 		"Mar 16, 2024  6:12 PM","Mar 17, 2024  6:12 PM","Mar 18, 2024  6:12 PM","Mar 19, 2024  6:13 PM",
