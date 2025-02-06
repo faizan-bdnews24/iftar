@@ -59,17 +59,17 @@
 <script>      
    let ramadan = [
        //trail prupose
-       "Feb 05, 2025 09:10 PM","Feb 06, 2025 11:10 PM","Mar 09, 2024  10:10 PM","Mar 10, 2024  8:10 PM","Mar 11, 2024  6:10 PM",
+       "Feb 06, 2025 11:10 PM","Feb 07, 2025 11:10 PM","Feb 08, 2025 11:10 PM","Feb 09, 2025 11:10 PM","Feb 10, 2025 11:10 PM",
         //start ramadan date
-		"Mar 12, 2024  6:10 PM","Mar 13, 2024  6:10 PM","Mar 14, 2024  6:11 PM","Mar 15, 2024  6:11 PM",
-		"Mar 16, 2024  6:12 PM","Mar 17, 2024  6:12 PM","Mar 18, 2024  6:12 PM","Mar 19, 2024  6:13 PM",
-		"Mar 20, 2024  6:13 PM","Mar 21, 2024  6:13 PM","Mar 22, 2024  6:14 PM","Mar 23, 2024  6:14 PM",
-       "Mar 24, 2024 18:14:00", "Mar 25, 2024 18:15:00","Mar 26, 2024 18:15:00","Mar 27, 2024 18:16:00",
-   "Mar 28, 2024 18:16:00", "Mar 29, 2024 18:17:00","Mar 30, 2024 18:17:00","Mar 31, 2024 18:18:00",
-   "Apr 01, 2024 18:18:00", "Apr 02, 2024 18:19:00",    
-       "Apr 03, 2024 18:19:00", "Apr 04, 2024 18:19:00", "Apr 05, 2024 18:20:00",    
-       "Apr 06, 2024 18:20:00", "Apr 07, 2024 18:21:00", "Apr 08, 2024 18:21:00",    
-       "Apr 09, 2024 18:21:00", "Apr 10, 2024 18:22:00", "Apr 11, 2024 18:22:00", 
+		"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
+		"Mar 06, 2025  6:04 PM","Mar 07, 2025  6:05 PM","Mar 08, 2025  6:05 PM","Mar 09, 2025  6:06 PM",
+		"Mar 10, 2025  6:06 PM","Mar 11, 2025  6:06 PM",
+		"Mar 12, 2025  6:07 PM","Mar 13, 2025  6:07 PM","Mar 14, 2025  6:08 PM","Mar 15, 2025  6:08 PM",
+		"Mar 16, 2025  6:08 PM","Mar 17, 2025  6:09 PM","Mar 18, 2025  6:09 PM","Mar 19, 2025  6:10 PM",
+		"Mar 20, 2025  6:10 PM","Mar 21, 2025  6:10 PM","Mar 22, 2025  6:11 PM","Mar 23, 2025  6:11 PM",
+       "Mar 24, 2025 6:11 PM", "Mar 25, 2025 6:12 PM","Mar 26, 2025 6:12 PM","Mar 27, 2025 6:13 PM",
+   "Mar 28, 2025 6:13 PM", "Mar 29, 2025 6:14 PM","Mar 30, 2025 6:14 PM","Mar 31, 2025 6:15 PM",
+   "Apr 01, 2025 6:15 PM",
    ];
    
    let iftar_countdown = document.getElementById('iftar_countdown');
@@ -104,7 +104,7 @@
    
 	let imgSrc = "./images/daily/desktop/"+getDay+".gif";
 	if(getHour>=18){imgSrc = "./images/daily/desktop/"+nextDay+".gif";}
-       let htmlData = `<div class="iftar_2024">
+       let htmlData = `<div class="iftar_2025">
    <a target="_blank" href="https://www.facebook.com/RFLFalconbd"><img src="${imgSrc}?v1"/></a>
    
    </div>`;
@@ -131,7 +131,7 @@
    }
    
    
-   //ramadan 2024 looping through current date
+   //ramadan 2025 looping through current date
    for(let i = 0; i < ramadan.length; i++){
        let currentDate = new Date();          
        let ramadanDate = ramadan[i];    
