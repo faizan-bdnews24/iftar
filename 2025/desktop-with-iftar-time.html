@@ -56,6 +56,17 @@
 </div>
 <div id="after_end_countdown">
 </div>
+
+<!--json import-->
+
+<script type="text/javascript">
+let sehri_iftar = [{"date":"Mar 02","sehri":"৫:০৪","iftar":"৬:০২"},{"date":"Mar 03","sehri":"৫:০৩","iftar":"৬:০৩"},{"date":"Mar 04","sehri":"৫:০২","iftar":"৬:০৩"},{"date":"Mar 05","sehri":"৫:০১","iftar":"৬:০৪"},{"date":"Mar 06","sehri":"৫:০০","iftar":"৬:০৪"},{"date":"Mar 07","sehri":"৪:৫৯","iftar":"৬:০৫"},{"date":"Mar 08","sehri":"৪:৫৮","iftar":"৬:০৫"},{"date":"Mar 09","sehri":"৪:৫৭","iftar":"৬:০৬"},{"date":"Mar 10","sehri":"৪:৫৬","iftar":"৬:০৬"},{"date":"Mar 11","sehri":"৪:৫৫","iftar":"৬:০৬"},{"date":"Mar 12","sehri":"৪:৫৪","iftar":"৬:০৭"},{"date":"Mar 13","sehri":"৪:৫৩","iftar":"৬:০৭"},{"date":"Mar 14","sehri":"৪:৫২","iftar":"৬:০৮"},{"date":"Mar 15","sehri":"৪:৫১","iftar":"৬:০৮"},{"date":"Mar 16","sehri":"৪:৫০","iftar":"৬:০৮"},{"date":"Mar 17","sehri":"৪:৪৯","iftar":"৬:০৯"},{"date":"Mar 18","sehri":"৪:৪৮","iftar":"৬:০৯"},{"date":"Mar 19","sehri":"৪:৪৭","iftar":"৬:১০"},{"date":"Mar 20","sehri":"৪:৪৬","iftar":"৬:১০"},{"date":"Mar 21","sehri":"৪:৪৫","iftar":"৬:১০"},{"date":"Mar 22","sehri":"৪:৪৪","iftar":"৬:১১"},{"date":"Mar 23","sehri":"৪:৪৩","iftar":"৬:১১"},{"date":"Mar 24","sehri":"৪:৪২","iftar":"৬:১১"},{"date":"Mar 25","sehri":"৪:৪১","iftar":"৬:১২"},{"date":"Mar 26","sehri":"৪:৪০","iftar":"৬:১২"},{"date":"Mar 27","sehri":"৪:৩৯","iftar":"৬:১৩"},{"date":"Mar 28","sehri":"৪:৩৮","iftar":"৬:১৩"},{"date":"Mar 29","sehri":"৪:৩৬","iftar":"৬:১৪"},{"date":"Mar 30","sehri":"৪:৩৫","iftar":"৬:১৪"},{"date":"Mar 31","sehri":"৪:৩৪","iftar":"৬:১৫"},{"date":"Apr 01","sehri":"৪:৩৩","iftar":"৬:১৫"}];
+console.log(sehri_iftar);
+console.log(sehri_iftar[29]['sehri']);
+</script>
+
+<!--end json import-->
+	
 <script>      
    let ramadan = [
        //trail prupose
@@ -145,6 +156,9 @@
        let currentDateFormat = currentDate.toString().slice(4, 10);
        let ramadanDateFormat = ramadanDate.toString().slice(0, 6);
    
+   //console.log("currentDateFormat: "+currentDateFormat);
+   //console.log("ramadanDateFormat: "+ramadanDateFormat);
+   
        //if current date is match to looping date
        if(currentDateFormat === ramadanDateFormat){
    
@@ -163,6 +177,7 @@
                // get day
                let getDay = Math.floor(diffDate / ( 24 * 60 *60 *1000));
                //console.log(getDay.toLocaleString('bn-BD'));
+              
                
                // get hours
                let getHours = Math.floor((diffDate % ( 24 * 60 *60 *1000)) / (60 * 60 * 1000));
