@@ -5,7 +5,7 @@
    font-family: solaimanlipi;
    src: url(./fonts/SolaimanLipi_20-04-07.ttf);
 }
-#after_end_countdown{
+#adv_countdown{
 	display:none;
 	width:970px;
 	height:90px;
@@ -60,7 +60,7 @@
    </div>
    <!--<div id="iftar_countdown_right"><img src="https://d2movi6j6mtjdd.cloudfront.net/dev/ramadan/citygroup/teer.png" alt="bdnews24_iftar"/></div>-->
 </div>
-<div id="after_end_countdown">
+<div id="adv_countdown">
 	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 	<script>
 	  window.googletag = window.googletag || {cmd: []};
@@ -92,7 +92,7 @@ let sehri_iftar = [{"date":"Feb 10","sehri":"৫:০৪","iftar":"৬:০২"},{
 <script>      
    let ramadan = [
        //trail prupose
-       "Feb 10, 2025 7:10 PM","Feb 11, 2025 11:10 PM",
+       "Feb 10, 2025 09:48 PM","Feb 11, 2025 11:10 PM",
         //start ramadan date
 		"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
 		"Mar 06, 2025  6:04 PM","Mar 07, 2025  6:05 PM","Mar 08, 2025  6:05 PM","Mar 09, 2025  6:06 PM",
@@ -131,8 +131,8 @@ let sehri_iftar = [{"date":"Feb 10","sehri":"৫:০৪","iftar":"৬:০২"},{
 		
    let expiredTimer = () => {
        iftar_countdown.style.display = "none";
-       let after_end_countdown = document.querySelector('#after_end_countdown');
-	   after_end_countdown.style.display = "block";
+       let adv_countdown = document.querySelector('#adv_countdown');
+	   adv_countdown.style.display = "block";
 	   
    
    //console.log("day today: "+ getDay);
@@ -151,7 +151,7 @@ let sehri_iftar = [{"date":"Feb 10","sehri":"৫:০৪","iftar":"৬:০২"},{
 				<span>2</span>
 			</div>
 		   `;
-	after_end_countdown.insertAdjacentHTML('afterEnd', htmlData);
+	adv_countdown.insertAdjacentHTML('afterEnd', htmlData);
 	  */
 	  console.log("refreshing ramadan ads");
 	  googletag.pubads().refresh();
