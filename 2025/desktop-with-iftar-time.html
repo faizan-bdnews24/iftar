@@ -7,10 +7,13 @@
 }
 #after_end_countdown{
 	display:none;
+	width:970px;
+	height:90px;
+	background-color:#f9f8eb;
 }
    #iftar_countdown{
-	   width:980;
-	   height:90;
+	   width:980px;
+	   height:90px;
 	   font-family:solaimanlipi;
 	   background-color:#f2f2f2;
 	   background-image: url("./images/iftar_bg_980x90.png");
@@ -62,9 +65,10 @@
 	<script>
 	  window.googletag = window.googletag || {cmd: []};
 	  googletag.cmd.push(function() {
-		googletag.defineSlot("/13592525/bdn-ramadan-countdown", [[970, 90], [320, 100]], "div-gpt-ad-1739187348979-0").setTargeting('environment', ['staging']).addService(googletag.pubads());
+		googletag.defineSlot("/13592525/bdn-ramadan-countdown", [970, 90], "div-gpt-ad-1739187348979-0").setTargeting('environment', ['staging']).addService(googletag.pubads());
 		googletag.pubads().enableSingleRequest();
 		googletag.pubads().collapseEmptyDivs();
+		googletag.pubads().disableInitialLoad();
 		googletag.enableServices();
 	  });
 	</script>
@@ -76,20 +80,19 @@
 	</div>
 </div>
 
-<!--json import-->
-
+<!--sehri-iftar-time-json import-->
 <script type="text/javascript">
 let sehri_iftar = [{"date":"Feb 10","sehri":"৫:০৪","iftar":"৬:০২"},{"date":"Feb 11","sehri":"৫:০৪","iftar":"৬:০২"},{"date":"Mar 02","sehri":"৫:০৪","iftar":"৬:০২"},{"date":"Mar 03","sehri":"৫:০৩","iftar":"৬:০৩"},{"date":"Mar 04","sehri":"৫:০২","iftar":"৬:০৩"},{"date":"Mar 05","sehri":"৫:০১","iftar":"৬:০৪"},{"date":"Mar 06","sehri":"৫:০০","iftar":"৬:০৪"},{"date":"Mar 07","sehri":"৪:৫৯","iftar":"৬:০৫"},{"date":"Mar 08","sehri":"৪:৫৮","iftar":"৬:০৫"},{"date":"Mar 09","sehri":"৪:৫৭","iftar":"৬:০৬"},{"date":"Mar 10","sehri":"৪:৫৬","iftar":"৬:০৬"},{"date":"Mar 11","sehri":"৪:৫৫","iftar":"৬:০৬"},{"date":"Mar 12","sehri":"৪:৫৪","iftar":"৬:০৭"},{"date":"Mar 13","sehri":"৪:৫৩","iftar":"৬:০৭"},{"date":"Mar 14","sehri":"৪:৫২","iftar":"৬:০৮"},{"date":"Mar 15","sehri":"৪:৫১","iftar":"৬:০৮"},{"date":"Mar 16","sehri":"৪:৫০","iftar":"৬:০৮"},{"date":"Mar 17","sehri":"৪:৪৯","iftar":"৬:০৯"},{"date":"Mar 18","sehri":"৪:৪৮","iftar":"৬:০৯"},{"date":"Mar 19","sehri":"৪:৪৭","iftar":"৬:১০"},{"date":"Mar 20","sehri":"৪:৪৬","iftar":"৬:১০"},{"date":"Mar 21","sehri":"৪:৪৫","iftar":"৬:১০"},{"date":"Mar 22","sehri":"৪:৪৪","iftar":"৬:১১"},{"date":"Mar 23","sehri":"৪:৪৩","iftar":"৬:১১"},{"date":"Mar 24","sehri":"৪:৪২","iftar":"৬:১১"},{"date":"Mar 25","sehri":"৪:৪১","iftar":"৬:১২"},{"date":"Mar 26","sehri":"৪:৪০","iftar":"৬:১২"},{"date":"Mar 27","sehri":"৪:৩৯","iftar":"৬:১৩"},{"date":"Mar 28","sehri":"৪:৩৮","iftar":"৬:১৩"},{"date":"Mar 29","sehri":"৪:৩৬","iftar":"৬:১৪"},{"date":"Mar 30","sehri":"৪:৩৫","iftar":"৬:১৪"},{"date":"Mar 31","sehri":"৪:৩৪","iftar":"৬:১৫"},{"date":"Apr 01","sehri":"৪:৩৩","iftar":"৬:১৫"}];
 //console.log(sehri_iftar);
 //console.log("first one: "+sehri_iftar[29]['sehri']);
 </script>
 
-<!--end json import-->
+<!--end sehri-iftar-time-json import-->
 	
 <script>      
    let ramadan = [
        //trail prupose
-       "Feb 10, 2025 6:10 PM","Feb 11, 2025 11:10 PM",
+       "Feb 10, 2025 7:10 PM","Feb 11, 2025 11:10 PM",
         //start ramadan date
 		"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
 		"Mar 06, 2025  6:04 PM","Mar 07, 2025  6:05 PM","Mar 08, 2025  6:05 PM","Mar 09, 2025  6:06 PM",
@@ -150,7 +153,8 @@ let sehri_iftar = [{"date":"Feb 10","sehri":"৫:০৪","iftar":"৬:০২"},{
 		   `;
 	after_end_countdown.insertAdjacentHTML('afterEnd', htmlData);
 	  */
-	  
+	  console.log("refreshing pubads");
+	  googletag.pubads().refresh();
    };
    
    
