@@ -13,3 +13,23 @@ https://iftar.bdnews24.com/2025/desktop-with-iftar-time.html
 testing iframe:
 english sub-category:
 https://bdnews24.com/sport/world-cup-2022
+
+
+#homepage tag
+
+<!--start iftar-countdown-area-->
+<section class="adHome-area">
+	<div class="container">
+		<div class="row MobileHide">
+			<div class="col-lg-12 d-flex justify-content-center">
+				<iframe id="_desktop" scrolling="no" width="988" height="100" src="https://iftar.bdnews24.com/2025/desktop-dfp.html" style="border:none;"></iframe>
+			</div>
+		</div>
+		<div class="row MobileMenuShow">
+			<div class="col-lg-12 d-flex justify-content-center">
+				<iframe id="_mobile" scrolling="no" width="328" height="110" src="https://iftar.bdnews24.com/2025/mobile.html" style="border:none;"></iframe>
+			</div>
+		</div>
+	</div>
+</section>
+<!--end iftar-countdown-area-->
