@@ -6,5 +6,10 @@ https://iftar.bdnews24.com/2025/desktop
 https://iftar.bdnews24.com/2025/mobile
 
 
+https://iftar.bdnews24.com/2025/desktop-dfp.html
+https://iftar.bdnews24.com/2025/desktop-with-iftar-time.html
+
+
+testing iframe:
 english sub-category:
 https://bdnews24.com/sport/world-cup-2022
