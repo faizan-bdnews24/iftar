@@ -57,14 +57,33 @@
 	
 </div>
 
-<div id="after_end_countdown">
-
+<!--admanager tag-->
+<div id="adv_countdown">
+	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+	<script>
+	  window.googletag = window.googletag || {cmd: []};
+	  googletag.cmd.push(function() {
+		googletag.defineSlot("/13592525/bdn-ramadan-countdown", [320, 100], "div-gpt-ad-1739187348979-0").setTargeting('environment', ['staging']).addService(googletag.pubads());
+		googletag.pubads().enableSingleRequest();
+		googletag.pubads().collapseEmptyDivs();
+		googletag.pubads().disableInitialLoad();
+		googletag.enableServices();
+	  });
+	</script>
+	<!-- /13592525/bdn-ramadan-countdown -->
+	<div id="div-gpt-ad-1739187348979-0" style="min-width: 320px; min-height: 90px;">
+	<script>
+		googletag.cmd.push(function() { googletag.display("div-gpt-ad-1739187348979-0"); });
+	</script>
+	</div>
 </div>
+<!--end admanager tag-->
+
 <script>      
         
    let ramadan = [
        //trail prupose
-       "Feb 12, 2025 11:15 PM","Feb 13, 2025 11:10 PM","Feb 08, 2025 11:10 PM","Feb 09, 2025 11:10 PM","Feb 10, 2025 11:10 PM",
+       "Feb 12, 2025 09:45 PM","Feb 13, 2025 11:10 PM","Feb 08, 2025 11:10 PM","Feb 09, 2025 11:10 PM","Feb 10, 2025 11:10 PM",
         //start ramadan date
 		"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
 		"Mar 06, 2025  6:04 PM","Mar 07, 2025  6:05 PM","Mar 08, 2025  6:05 PM","Mar 09, 2025  6:06 PM",
@@ -87,33 +106,41 @@
         //convert to bangla
         let convertToBangla = toBd => toBd.toLocaleString('bn-BD');
 
-        //last time action
+        //NEXT DAY calculation
+		/*
 		let todaysDate = new Date();
 		//console.log("currentDate: "+todaysDate);			
 		let getDay = todaysDate.getDate();
 		let getHour = todaysDate.getHours();
 		//console.log("day count outside: "+ getDay +" hour: "+ getHour);
-		//NEXT DAY
+		
 		let nextDate = new Date();
 		nextDate.setDate(nextDate.getDate()+1);
 		//console.log("nextDate: "+nextDate);
 		let nextDay = nextDate.getDate();
-		console.log("iftar countdown day tomorrow: "+nextDay);
-		//END NEXT DAY
+		//console.log("iftar countdown day tomorrow: "+nextDay);
+		*/
+		//END NEXT DAY calculation
 		
         let expiredTimer = () => {
             iftar_countdown.style.display = "none";
-            let main = document.querySelector('#after_end_countdown');
+		   let adv_countdown = document.querySelector('#adv_countdown');
+		   adv_countdown.style.display = "block";
 			
-			//console.log("day today: "+ getDay);
-			
+			//generating adv image
+			/*
 			let imgSrc = "./images/daily/mobile/"+getDay+".gif";
-			if(getHour>=18){imgSrc = "./images/daily/mobile/"+nextDay+".gif";console.log("imgSrc next "+imgSrc );}console.log("imgSrc "+imgSrc);
+			if(getHour>=18){imgSrc = "./images/daily/mobile/"+nextDay+".gif";}
+			
             let htmlData = `<div class="iftar_2025">
 			<a target="_blank" href="https://www.facebook.com/RFLFalconbd"><img src="${imgSrc}"/></a>
 
-    </div>`;
+			</div>`;
             main.insertAdjacentHTML('afterEnd', htmlData);
+			*/
+			//end generating adv image
+		  googletag.pubads().refresh();
+		  console.log("ramadan ads refresh");
         };
 
 
