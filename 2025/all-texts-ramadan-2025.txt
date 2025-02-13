@@ -33,3 +33,6 @@ https://bdnews24.com/sport/world-cup-2022
 	</div>
 </section>
 <!--end iftar-countdown-area-->
+
+#dfp line item
+https://admanager.google.com/13592525#delivery/line_item/detail/line_item_id=6922522697&order_id=3708144368&li_tab=settings
