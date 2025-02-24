@@ -1,4 +1,5 @@
-
+file:///C:/Users/faiza/OneDrive/Documents/git-repo/iftar-countdown/2025/desktop-dfp.html
+file:///C:/Users/faiza/OneDrive/Documents/git-repo/iftar-countdown/2025/mobile-dfp.html
 
 https://iftar.bdnews24.com/2025/calendar/
 
@@ -7,8 +8,11 @@ https://iftar.bdnews24.com/2025/mobile
 
 
 https://iftar.bdnews24.com/2025/desktop-dfp.html
+https://iftar.bdnews24.com/2025/mobile-dfp.html
 https://iftar.bdnews24.com/2025/desktop-with-iftar-time.html
 
+#git
+https://github.com/faizan-bdnews24/iftar/
 
 testing iframe:
 english sub-category:
@@ -36,3 +40,5 @@ https://bdnews24.com/sport/world-cup-2022
 
 #dfp line item
 https://admanager.google.com/13592525#delivery/line_item/detail/line_item_id=6922522697&order_id=3708144368&li_tab=settings
+
+https://admanager.google.com/13592525#creatives/creative/detail/line_item_id=6922522697&creative_id=138507912364&tab=preview

@@ -1,0 +1,12 @@
+<style>
+	.iftar_countdown_box{ margin-top: 10px;text-align: center;}
+    .iftar_countdown_box iframe#_mobile{display:none;}
+	@media only screen and (max-width:980px) {
+        .iftar_countdown_box iframe#_desktop{display:none;}
+		.iftar_countdown_box iframe#_mobile{display:block;}
+    }
+</style>
+<div class="iftar_countdown_box"> 
+	<iframe id="_desktop" scrolling="no" width="988" height="100" src="./desktop-dfp.html" style="border:none;"></iframe>
+	<iframe id="_mobile" scrolling="no" width="328" height="110" src="./mobile-dfp.html" style="border:none;"></iframe>
+</div>
