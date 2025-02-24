@@ -1,23 +1,20 @@
 <style>
 	.iftar_countdown_box{ margin-top: 10px;text-align: center;}
-    @media only screen and (min-width:981px) {
-        .iftar_countdown_box iframe#_mobile{display:none;}
-    }
-	@media only screen and (max-width:980px) {
-        .iftar_countdown_box iframe#_desktop{display:none;}
-    }
-	.OEtoD {
-	padding: 0;
-	overflow: hidden;
-	border: none;
-    }
 </style>
 <div class="iftar_countdown_box"> 
-	<iframe id="_desktop" scrolling="no" width="988" height="100" src="https://iftar.bdnews24.com/2025/desktop.html" style="border:none;"></iframe>
-	<iframe id="_mobile" scrolling="no" width="328" height="110" src="https://iftar.bdnews24.com/2025/mobile.html" style="border:none;"></iframe>
+	<iframe id="iftar_window" scrolling="no" width="988" height="100" src="./desktop-dfp.html" style="border:none;"></iframe>
 </div>
+<script>
+console.log("screen.width: "+screen.width);
+  var iframe_obj = document.getElementById("iftar_window");
+  if(screen.width < 980){
+	iframe_obj.src = "./mobile-dfp.html";
+	iframe_obj.style.width = "328px";
+	iframe_obj.style.height = "110px";
+  }
+</script>
 
-
+---------------------
 
 <!--start iftar-countdown-area-->
 <section class="adHome-area">
@@ -35,3 +32,26 @@
 	</div>
 </section>
 <!--end iftar-countdown-area-->
+
+
+---------------
+
+
+<style>
+	.iftar_countdown_box{ margin-top: 10px;text-align: center;}
+    @media only screen and (min-width:981px) {
+        .iftar_countdown_box iframe#_mobile{display:none;}
+    }
+	@media only screen and (max-width:980px) {
+        .iftar_countdown_box iframe#_desktop{display:none;}
+    }
+	.OEtoD {
+	padding: 0;
+	overflow: hidden;
+	border: none;
+    }
+</style>
+<div class="iftar_countdown_box"> 
+	<iframe id="_desktop" scrolling="no" width="988" height="100" src="https://iftar.bdnews24.com/2025/desktop.html" style="border:none;"></iframe>
+	<iframe id="_mobile" scrolling="no" width="328" height="110" src="https://iftar.bdnews24.com/2025/mobile.html" style="border:none;"></iframe>
+</div>
