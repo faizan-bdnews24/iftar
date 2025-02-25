@@ -78,12 +78,13 @@
 	<script>
 	let slot_width = 970 ;
 	let slot_height = 90 ;
-	if(screen.width < 980){
+	if(window.innerWidth < 980){
 		slot_width = 320 ;
 		slot_height = 100 ;
 	}
+	console.log("screen.width: "+screen.width);
+	console.log("window.innerWidth: "+window.innerWidth);
 	console.log("slot_width: "+slot_width+" | slot_height:"+slot_height);
-	var size = 320;
 	  window.googletag = window.googletag || {cmd: []};
 	  googletag.cmd.push(function() {
 		googletag.defineSlot("/13592525/bdn-ramadan-countdown", [slot_width, slot_height], "div-gpt-ad-1739187348979-0").addService(googletag.pubads());
