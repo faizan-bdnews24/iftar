@@ -35,7 +35,6 @@
 #iftar_countdown_clock div[id^="iftar_countdown_"]:nth-child(2){padding-left: 84px;}
 #iftar_countdown_clock div[id^="iftar_countdown_"]:nth-child(3){padding-left: 82px;}
 @media only screen and (max-width:980px) {
-	.ramadan_adv{min-width:320px!important;min-height:100px!important;}
 	#adv_countdown, #adv_countdown > div{
 		width:320px;
 		height:100px;
@@ -77,9 +76,17 @@
 <div id="adv_countdown">
 	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 	<script>
+	let slot_width = 970 ;
+	let slot_height = 90 ;
+	if(screen.width < 980){
+		slot_width = 320 ;
+		slot_height = 100 ;
+	}
+	console.log("slot_width: "+slot_width+" | slot_height:"+slot_height);
+	var size = 320;
 	  window.googletag = window.googletag || {cmd: []};
 	  googletag.cmd.push(function() {
-		googletag.defineSlot("/13592525/bdn-ramadan-countdown", [[320, 100],[970, 90]], "div-gpt-ad-1739187348979-0").addService(googletag.pubads());
+		googletag.defineSlot("/13592525/bdn-ramadan-countdown", [slot_width, slot_height], "div-gpt-ad-1739187348979-0").addService(googletag.pubads());
 		googletag.pubads().enableSingleRequest();
 		googletag.pubads().collapseEmptyDivs();
 		googletag.pubads().disableInitialLoad();
@@ -87,7 +94,7 @@
 	  });
 	</script>
 	<!-- /13592525/bdn-ramadan-countdown -->
-	<div class="ramadan_adv" id="div-gpt-ad-1739187348979-0" style="min-width: 970px; min-height: 90px;">
+	<div id="div-gpt-ad-1739187348979-0" style="min-width: 320px; min-height: 90px;">
 	<script>
 		googletag.cmd.push(function() { googletag.display("div-gpt-ad-1739187348979-0"); });
 	</script>
