@@ -78,7 +78,7 @@
 	<script>
 	let slot_width = 970 ;
 	let slot_height = 90 ;
-	if(window.innerWidth < 980){
+	if(screen.width < 980 || window.innerWidth < 980){
 		slot_width = 320 ;
 		slot_height = 100 ;
 	}
@@ -88,6 +88,7 @@
 	  window.googletag = window.googletag || {cmd: []};
 	  googletag.cmd.push(function() {
 		googletag.defineSlot("/13592525/bdn-ramadan-countdown", [slot_width, slot_height], "div-gpt-ad-1739187348979-0").addService(googletag.pubads());
+		googletag.pubads().setTargeting('environment', ['production'])
 		googletag.pubads().enableSingleRequest();
 		googletag.pubads().collapseEmptyDivs();
 		googletag.pubads().disableInitialLoad();
@@ -106,7 +107,7 @@
 <script>      
    let ramadan = [
        //trail prupose
-       "Feb 24, 2025 7:16 PM","Feb 25, 2025 1:10 PM","Feb 26, 2025 1:10 PM",
+       "Feb 27, 2025 7:16 PM","Mar 01, 2025 1:10 PM",
         //start ramadan date
 		"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
 		"Mar 06, 2025  6:04 PM","Mar 07, 2025  6:05 PM","Mar 08, 2025  6:05 PM","Mar 09, 2025  6:06 PM",

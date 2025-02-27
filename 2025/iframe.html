@@ -1,22 +1,23 @@
 <style>
 	.iftar_countdown_box{ margin-top: 10px;text-align: center;}
-/*    .iftar_countdown_box iframe#_mobile{display:none;}
 	@media only screen and (max-width:980px) {
-        .iftar_countdown_box iframe#_desktop{display:none;}
-		.iftar_countdown_box iframe#_mobile{display:block;}
-    } */
+		.iftar_countdown_box iframe{width:328px;height:110px;}
+    }
 </style>
 <div class="iftar_countdown_box"> 
-	<iframe id="iftar_window" scrolling="no" width="988" height="100" src="./desktop-dfp.html" style="border:none;"></iframe>
+	<iframe id="iftar_window" scrolling="no" width="988" height="100" src="./responsive.html" style="border:none;"></iframe>
 	<!--<iframe id="_mobile" scrolling="no" width="328" height="110" src="./mobile-dfp.html" style="border:none;"></iframe>-->
 </div>
 <script>
-console.log("screen.width: "+screen.width);
+
+console.log("iframe | screen.width: "+screen.width);
+	console.log("iframe | window.innerWidth: "+window.innerWidth);
+/*	
   var iframe_obj = document.getElementById("iftar_window");
   if(screen.width < 980){
 	iframe_obj.src = "./mobile-dfp.html";
 	iframe_obj.style.width = "328px";
 	iframe_obj.style.height = "110px";
   }
-
+*/
 </script>
