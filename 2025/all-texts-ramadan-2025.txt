@@ -24,16 +24,15 @@ https://bdnews24.com/sport/world-cup-2022
 #homepage tag
 
 <!--start iftar-countdown-area-->
-<section class="adHome-area d-none">
+<section class="adHome-area d-none1">
 	<div class="container">
 		<style>
-			.iftar_countdown_box{ margin-top: 10px;text-align: center;}
 			@media only screen and (max-width:980px) {
 				.iftar_countdown_box iframe{width:328px;height:110px;}
 			}
 		</style>
 		<div class="row">
-			<div class="col-lg-12 d-flex justify-content-center iftar_countdown_box">
+			<div class="d-flex justify-content-center iftar_countdown_box">
 				<iframe scrolling="no" width="988" height="100" src="https://iftar.bdnews24.com/2025/responsive.html" style="border:none;"></iframe>
 			</div>
 		</div>
