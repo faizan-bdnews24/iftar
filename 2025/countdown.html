@@ -85,7 +85,7 @@
 <script>      
    let ramadan = [
        //trail prupose
-       "Feb 27, 2025 7:38:30 PM","Mar 04, 2025 04:10:10 PM","Mar 05, 2025 4:11:00 PM",
+       "Feb 27, 2025 7:38:30 PM","Mar 04, 2025 04:10:10 PM","Mar 05, 2025 4:21:00 PM",
         //start ramadan date
 	/*	"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
 		"Mar 06, 2025  6:04 PM","Mar 07, 2025  6:05 PM","Mar 08, 2025  6:05 PM","Mar 09, 2025  6:06 PM",
@@ -108,11 +108,9 @@
    let convertToBangla = toBd => toBd.toLocaleString('bn-BD');
    		
    let expiredTimer = () => {
-		console.log("expiredTimer 1");
        iftar_countdown.style.display = "none";
        let adv_countdown = document.querySelector('#adv_countdown');
 	   adv_countdown.style.display = "block";
-	   console.log("expiredTimer 2");
 	/*start admanager script with some additional codes*/
 		let slot_width = 970 ;
 		let slot_height = 90 ;
@@ -142,21 +140,18 @@
        if(diffDate < 0){ //if date difference is zero expirer the timer
         expiredTimer();
        clearInterval(clearTimer); //clear the interval set by the setinterval(clearTimer)
-       console.log("lastAction");
        }               
    }
    
     //clear interval else statement
     let lastActionElseStatement = () => { //when the current time is less than 4pm
-		console.log("lastActionElseStatement 1");	 
         expiredTimer();
        clearInterval(clearTimer);  
-		console.log("lastActionElseStatement last");	   
    }
 
 	let currentDate =new Date();
 	if(currentDate.getHours() >= "16"){ /*change this from 16 to desired time to test countdown*/   
-		iftar_countdown.style.display = "block";
+		
    //ramadan 2025 looping through current date
 		for(let i = 0; i < ramadan.length; i++){
 		   let currentDate = new Date();          
@@ -166,10 +161,12 @@
 		  console.log("running through each date: "+i);
 			//if current date is match to looping date
 		   if(currentDateFormat === ramadanDateFormat){
-			console.log("current date found");
+				console.log("current date found");
+				iftar_countdown.style.display = "block";
+			
 		   //setinterval function start 
 			   const timer = () => {
-								  
+						console.log("insdie timer");		  
 				//setinterval with current date is greater than 4 pm 
 				//	let currentDate =new Date();
 				//	if(currentDate.getHours() >= "1"){ /*change this from 16 to desired time to test countdown*/
@@ -228,7 +225,7 @@
 		   
 			   }
 	   
-			var clearTimer = setInterval(timer, 1000);   
+			var clearTimer = setInterval(timer, 100);   
 			break;
 		 }
 	   }
