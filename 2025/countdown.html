@@ -76,26 +76,6 @@
 <!--admanager tag-->
 <div id="adv_countdown">
 	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-	<script>
-	let slot_width = 970 ;
-	let slot_height = 90 ;
-	if(screen.width < 980 || window.innerWidth < 980){
-		slot_width = 320 ;
-		slot_height = 100 ;
-	}
-	console.log("screen.width: "+screen.width);
-	console.log("window.innerWidth: "+window.innerWidth);
-	console.log("slot_width: "+slot_width+" | slot_height:"+slot_height);
-	  window.googletag = window.googletag || {cmd: []};
-	  googletag.cmd.push(function() {
-		//googletag.defineSlot("/13592525/bdn-ramadan-countdown", [slot_width, slot_height], "div-gpt-ad-1739187348979-0").setTargeting('ad_slot_name', ['iftar-countdown']).setTargeting('environment', ['production']).addService(googletag.pubads());
-		googletag.defineSlot("/13592525/bdn-ramadan-countdown", [slot_width, slot_height], "div-gpt-ad-1739187348979-0").addService(googletag.pubads());
-		googletag.pubads().enableSingleRequest();
-		googletag.pubads().collapseEmptyDivs();
-		googletag.pubads().disableInitialLoad();
-		googletag.enableServices();
-	  });
-	</script>
 	<!-- /13592525/bdn-ramadan-countdown -->
 	<div id="div-gpt-ad-1739187348979-0" style="min-width: 320px; min-height: 90px;">
 	</div>
@@ -105,7 +85,7 @@
 <script>      
    let ramadan = [
        //trail prupose
-       "Feb 27, 2025 7:38:30 PM","Mar 04, 2025 04:10:10 PM","Mar 05, 2025 03:41:00 PM",
+       "Feb 27, 2025 7:38:30 PM","Mar 04, 2025 04:10:10 PM","Mar 05, 2025 4:11:00 PM",
         //start ramadan date
 	/*	"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
 		"Mar 06, 2025  6:04 PM","Mar 07, 2025  6:05 PM","Mar 08, 2025  6:05 PM","Mar 09, 2025  6:06 PM",
@@ -133,10 +113,28 @@
        let adv_countdown = document.querySelector('#adv_countdown');
 	   adv_countdown.style.display = "block";
 	   console.log("expiredTimer 2");
-	   
-	  googletag.cmd.push(function() { googletag.display("div-gpt-ad-1739187348979-0"); });
-	  googletag.pubads().refresh();
-	  console.log("ramadan ads refresh");
+	/*start admanager script with some additional codes*/
+		let slot_width = 970 ;
+		let slot_height = 90 ;
+		if(screen.width < 980 || window.innerWidth < 980){
+			slot_width = 320 ;
+			slot_height = 100 ;
+		}
+		console.log("screen.width: "+screen.width);
+		console.log("window.innerWidth: "+window.innerWidth);
+		console.log("slot_width: "+slot_width+" | slot_height:"+slot_height);
+		  window.googletag = window.googletag || {cmd: []};
+		  googletag.cmd.push(function() {
+			//googletag.defineSlot("/13592525/bdn-ramadan-countdown", [slot_width, slot_height], "div-gpt-ad-1739187348979-0").setTargeting('ad_slot_name', ['iftar-countdown']).setTargeting('environment', ['production']).addService(googletag.pubads());
+			googletag.defineSlot("/13592525/bdn-ramadan-countdown", [slot_width, slot_height], "div-gpt-ad-1739187348979-0").setTargeting('environment', ['production']).addService(googletag.pubads());
+			googletag.pubads().enableSingleRequest();
+			googletag.pubads().collapseEmptyDivs();
+			googletag.enableServices();
+			googletag.display("div-gpt-ad-1739187348979-0");
+		  });
+		  //googletag.cmd.push(function() { googletag.display("div-gpt-ad-1739187348979-0"); });
+	  /*end admanager script with some additional codes*/
+
    };
       
    //clear interval and last time action
@@ -157,7 +155,7 @@
    }
 
 	let currentDate =new Date();
-	if(currentDate.getHours() >= "1"){ /*change this from 16 to desired time to test countdown*/   
+	if(currentDate.getHours() >= "16"){ /*change this from 16 to desired time to test countdown*/   
 		iftar_countdown.style.display = "block";
    //ramadan 2025 looping through current date
 		for(let i = 0; i < ramadan.length; i++){
