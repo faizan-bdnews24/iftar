@@ -85,16 +85,16 @@
 <script>      
    let ramadan = [
        //trail prupose
-       "Feb 27, 2025 7:38:30 PM","Mar 04, 2025 04:10:10 PM","Mar 05, 2025 4:21:00 PM",
+       "Feb 27, 2025 7:38:30 PM","Mar 04, 2025 04:10:10 PM","Mar 08, 2025 6:21:00 PM",
         //start ramadan date
-	/*	"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
+		"Mar 02, 2025  6:02 PM","Mar 03, 2025  6:03 PM","Mar 04, 2025  6:03 PM","Mar 05, 2025  6:04 PM",
 		"Mar 06, 2025  6:04 PM","Mar 07, 2025  6:05 PM","Mar 08, 2025  6:05 PM","Mar 09, 2025  6:06 PM",
 		"Mar 10, 2025  6:06 PM","Mar 11, 2025  6:06 PM",
 		"Mar 12, 2025  6:07 PM","Mar 13, 2025  6:07 PM","Mar 14, 2025  6:08 PM","Mar 15, 2025  6:08 PM",
 		"Mar 16, 2025  6:08 PM","Mar 17, 2025  6:09 PM","Mar 18, 2025  6:09 PM","Mar 19, 2025  6:10 PM",
 		"Mar 20, 2025  6:10 PM","Mar 21, 2025  6:10 PM","Mar 22, 2025  6:11 PM","Mar 23, 2025  6:11 PM",
        "Mar 24, 2025 6:11 PM", "Mar 25, 2025 6:12 PM","Mar 26, 2025 6:12 PM","Mar 27, 2025 6:13 PM",
-   "Mar 28, 2025 6:13 PM", "Mar 29, 2025 6:14 PM","Mar 30, 2025 6:14 PM","Mar 31, 2025 6:15 PM", */
+   "Mar 28, 2025 6:13 PM", "Mar 29, 2025 6:14 PM","Mar 30, 2025 6:14 PM","Mar 31, 2025 6:15 PM", 
    ];
    
    let iftar_countdown = document.getElementById('iftar_countdown');
@@ -106,12 +106,9 @@
    
    //convert to bangla
    let convertToBangla = toBd => toBd.toLocaleString('bn-BD');
-   		
-   let expiredTimer = () => {
-       iftar_countdown.style.display = "none";
-       let adv_countdown = document.querySelector('#adv_countdown');
-	   adv_countdown.style.display = "block";
-	/*start admanager script with some additional codes*/
+ 	/*start admanager script with some additional codes*/ 
+   let loadAdmanager = () => {
+
 		let slot_width = 970 ;
 		let slot_height = 90 ;
 		if(screen.width < 980 || window.innerWidth < 980){
@@ -130,8 +127,14 @@
 			googletag.enableServices();
 			googletag.display("div-gpt-ad-1739187348979-0");
 		  });
-		  //googletag.cmd.push(function() { googletag.display("div-gpt-ad-1739187348979-0"); });
-	  /*end admanager script with some additional codes*/
+		  //googletag.cmd.push(function() { googletag.display("div-gpt-ad-1739187348979-0"); });   
+   };
+   /*end admanager script with some additional codes*/   		
+   let expiredTimer = () => {
+       iftar_countdown.style.display = "none";
+       let adv_countdown = document.querySelector('#adv_countdown');
+	   adv_countdown.style.display = "block";
+		loadAdmanager();
 
    };
       
@@ -150,7 +153,8 @@
    }
 
 	let currentDate =new Date();
-	if(currentDate.getHours() >= "16"){ /*change this from 16 to desired time to test countdown*/   
+		currentHour = currentDate.getHours();
+	if(currentHour >= "16" && currentHour <= 19){ /*countdown will work between 16 to 19 hours*/   
 		
    //ramadan 2025 looping through current date
 		for(let i = 0; i < ramadan.length; i++){
@@ -166,7 +170,7 @@
 			
 		   //setinterval function start 
 			   const timer = () => {
-						console.log("insdie timer");		  
+				//console.log("insdie timer");		  
 				//setinterval with current date is greater than 4 pm 
 				//	let currentDate =new Date();
 				//	if(currentDate.getHours() >= "1"){ /*change this from 16 to desired time to test countdown*/
@@ -236,5 +240,5 @@
 	{
 		lastActionElseStatement();
 	}   
-   
+	
 </script>
